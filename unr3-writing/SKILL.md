@@ -66,6 +66,14 @@ Phân bổ đúng N shot theo 4 đoạn dưới đây; tỷ lệ là định hư
 - Ghi ra `kich_ban.md` và present cho người dùng.
 - Nhắc: "Xem lại, sửa STYLE ANCHOR / thêm bớt shot tuỳ ý; xong đưa file này cho unr3-scene (một ảnh/clip) hoặc unr3-storyboard (nhiều ô shot/clip)."
 
+## Mạch truyện và liên kết giữa các shot
+- Toàn bộ kịch bản phải kể một câu chuyện có mở đầu, diễn tiến và kết thúc hợp lý. Mỗi shot đóng góp vào cùng hành trình/chủ đề cụ thể; cùng màu sắc hoặc cùng mood chưa đủ để tạo liên kết.
+- Mỗi cặp shot tổng liền kề phải có cầu nối nhìn thấy được: hành động tiếp diễn, nguyên nhân–kết quả, ánh nhìn–đối tượng, di chuyển theo tuyến đường, hoặc một chi tiết dẫn sang diễn biến tiếp theo. Không chèn cảnh đẹp rời rạc chỉ để đủ số shot.
+- Theo dõi trạng thái qua từng shot: vị trí, thời điểm, nhân vật, phục trang, đạo cụ đang ở đâu/trong tay ai, hướng nhìn, hướng di chuyển và cảm xúc. Đầu shot sau phải tương thích với cuối shot trước; thay đổi địa điểm/thời gian phải có dấu hiệu chuyển tiếp rõ.
+- Với câu chuyện không có nhân vật, dùng tuyến khám phá không gian, biến chuyển ánh sáng/thời tiết hoặc motif có diễn tiến làm sợi dây dẫn chuyện; không chỉ ghép phong cảnh ngẫu nhiên.
+- Trước khi viết các shot, xác định sợi dây câu chuyện và trạng thái mở/kết. Trong mỗi mục SHOT, thêm trường `Liên kết: ...` nêu điều tiếp nối từ shot trước và chi tiết dẫn sang shot sau nếu có; shot đầu thiết lập, shot cuối khép lại điều đã mở.
+- Tự kiểm cả chuỗi và từng cặp shot liền kề: có thể giải thích vì sao shot sau xuất hiện ngay sau shot trước bằng diễn biến cụ thể. Sửa các khoảng nhảy logic trước khi giao, giữ đúng số shot đã thống nhất và không thêm timestamp.
+
 ## Tự kiểm trước khi giao
 - [ ] Có STYLE ANCHOR đủ 5 dòng.
 - [ ] Đúng số shot đã thống nhất, không có mốc thời gian hoặc thời lượng từng shot.
