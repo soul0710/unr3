@@ -58,6 +58,15 @@ Ví dụ (1 dòng):
 - Ghi `image_prompts.md` và `video_prompts.md` dạng UTF-8, mỗi prompt đúng một dòng vật lý; không tiêu đề, code fence, bullet hay dòng trống. Kết thúc file bằng một ký tự xuống dòng để công cụ đếm dòng chính xác.
 - Present cả hai file; giải thích hoặc ghi chú chỉ viết ngoài file. Chỉ tạo prompt, không tự gọi công cụ tạo ảnh/video.
 
+## Mạch truyện và liên kết giữa các shot
+- Toàn bộ kịch bản phải kể một câu chuyện có mở đầu, diễn tiến và kết thúc hợp lý. Mỗi shot đóng góp vào cùng hành trình/chủ đề cụ thể; cùng màu sắc hoặc cùng mood chưa đủ để tạo liên kết.
+- Mỗi cặp shot tổng liền kề phải có cầu nối nhìn thấy được: hành động tiếp diễn, nguyên nhân–kết quả, ánh nhìn–đối tượng, di chuyển theo tuyến đường, hoặc một chi tiết dẫn sang diễn biến tiếp theo. Không chèn cảnh đẹp rời rạc chỉ để đủ số shot.
+- Theo dõi trạng thái qua từng shot: vị trí, thời điểm, nhân vật, phục trang, đạo cụ đang ở đâu/trong tay ai, hướng nhìn, hướng di chuyển và cảm xúc. Đầu shot sau phải tương thích với cuối shot trước; thay đổi địa điểm/thời gian phải có dấu hiệu chuyển tiếp rõ.
+- Với câu chuyện không có nhân vật, dùng tuyến khám phá không gian, biến chuyển ánh sáng/thời tiết hoặc motif có diễn tiến làm sợi dây dẫn chuyện; không chỉ ghép phong cảnh ngẫu nhiên.
+- Đọc toàn bộ kịch bản trước khi sinh từng dòng. Giữ các cầu nối và trạng thái của kịch bản trong cả prompt ảnh lẫn prompt video; mô tả cụ thể trạng thái đầu/cuối có liên quan, không chỉ viết “same as previous shot”. Mỗi dòng vẫn tự đứng độc lập.
+- Nếu kịch bản nguồn bị đứt mạch, nêu đúng cặp shot và hỏi phần nối cần thiết trước khi xuất; không tự thêm sự kiện, đổi thứ tự hoặc bỏ shot để che lỗi. Có thể bổ sung chi tiết dàn cảnh không đổi nội dung để làm rõ liên kết có sẵn.
+- Tự kiểm từng cặp dòng k/k+1: cuối clip k nối hợp lý với ảnh đầu clip k+1 về hành động, không gian, đạo cụ và cảm xúc. Giữ mỗi clip một cú máy 8 giây và khớp ảnh/video theo dòng.
+
 ## Tự kiểm trước khi giao
 - [ ] Số dòng 2 file bằng nhau và bằng N shot.
 - [ ] Không đánh số, không dòng trống, mỗi dòng tự đứng độc lập.
