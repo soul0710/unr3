@@ -1,6 +1,6 @@
 ---
 name: unr3-writing
-description: Dùng khi người dùng đưa một ý tưởng và muốn tạo KỊCH BẢN video kể chuyện dạng chill/relax để phủ nhạc piano (dạo phố, phong cảnh, hoài niệm). Là bước 1 của quy trình, tạo trước khi sinh prompt ảnh/video bằng unr3-scene.
+description: Dùng khi người dùng đưa một ý tưởng và muốn tạo KỊCH BẢN video kể chuyện dạng chill/relax để phủ nhạc piano (dạo phố, phong cảnh, hoài niệm). Là bước 1 của quy trình, tạo trước khi sinh prompt ảnh/video bằng unr3-scene hoặc unr3-storyboard.
 ---
 
 # unr3-writing — Ý tưởng → Kịch bản
@@ -8,8 +8,8 @@ description: Dùng khi người dùng đưa một ý tưởng và muốn tạo K
 ## Overview
 Biến một ý tưởng thành kịch bản video dạng câu chuyện, tông chill/relax để phủ nhạc
 piano. Mục tiêu: khán giả hứng thú và cảm động, KHÔNG giật gân. Output là 1 file
-`kich_ban.md` tiếng Việt, chia thành các SHOT 8 giây, có khối STYLE ANCHOR ở đầu — đúng
-chuẩn để skill `unr3-scene` đọc và sinh prompt ảnh/video.
+`kich_ban.md` tiếng Việt, chia thành các SHOT không ghi mốc thời gian, có khối STYLE ANCHOR ở đầu — đúng
+chuẩn để `unr3-scene` hoặc `unr3-storyboard` đọc và sinh prompt ảnh/video.
 
 ## Khi nào dùng
 - Người dùng đưa ý tưởng (bối cảnh, mood) và muốn kịch bản video relax.
@@ -18,8 +18,9 @@ chuẩn để skill `unr3-scene` đọc và sinh prompt ảnh/video.
 
 ## Input
 1. Ý tưởng: bối cảnh, mùa, thời điểm, cảm xúc mong muốn.
-2. Số shot `N` HOẶC thời lượng. N phải là số nguyên dương. Nếu chỉ có thời lượng: N = max(1, floor(thời lượng_giây / 8 + 0.5)); báo rõ thời lượng thực tế là N × 8 giây khi có làm tròn. Nếu số shot và thời lượng mâu thuẫn, hỏi người dùng chọn trước khi viết.
-   - Nếu người dùng KHÔNG cung cấp N/thời lượng: hỏi MỘT lần và chờ câu trả lời trước khi viết. Không tự bịa độ dài; chưa có câu trả lời thì chưa tạo kịch bản.
+2. Số shot `N` nếu người dùng chỉ định; phải là số nguyên dương. Nếu chỉ có thời lượng, hỏi chọn đầu ra một ảnh/clip (`unr3-scene`) hay storyboard nhiều shot/clip (`unr3-storyboard`) khi chưa rõ; không tự lấy thời lượng chia 8 để suy ra số shot cho storyboard.
+   - Nếu thiếu cả số shot lẫn thời lượng: hỏi một lần về độ dài mong muốn rồi chờ câu trả lời, không tự bịa độ dài.
+   - Thời lượng chỉ dùng để lên quy mô câu chuyện; không ghi timestamp, khoảng thời gian hoặc thời lượng từng shot trong `kich_ban.md`.
 
 ## Bố cục file kịch bản (BẮT BUỘC đúng format này)
 File `kich_ban.md`:
@@ -33,19 +34,19 @@ File `kich_ban.md`:
     - Ống kính / mood: [vd: 35–50mm, hoài niệm, chill]
     - Nhân vật / motif cố định: [vd: cô gái áo len be — hoặc "không có nhân vật"]
 
-    ## SHOT 01 — 0:00–0:08
+    ## SHOT 01
     - Cảnh: [mô tả hình ảnh cụ thể]
     - Cảm xúc: [mood của cảnh]
     - Máy quay: [gợi ý MỘT chuyển động cam chậm]
     - Nhạc: [nhịp piano / cường độ lúc này]
 
-    ## SHOT 02 — 0:08–0:16
+    ## SHOT 02
     ...
 
 Quy tắc:
 - STYLE ANCHOR viết MỘT lần, áp cho cả video → giữ mọi cảnh cùng một "bộ phim".
-- Đánh số shot liên tục, mỗi shot đúng 8 giây, mốc thời gian cộng dồn (0:00–0:08, 0:08–0:16, …).
-- Mỗi shot = MỘT khoảnh khắc, một chuyển động máy quay chậm và chuyển động môi trường nhẹ. Không nhồi nhiều hành động vào 8s; không cắt cảnh trong shot.
+- Đánh số SHOT liên tục, không ghi mốc thời gian hay gắn thời lượng cố định cho từng shot. Bước tạo prompt video sẽ phân bổ thời gian.
+- Mỗi shot = MỘT khoảnh khắc, một chuyển động máy quay chậm và chuyển động môi trường nhẹ. Không nhồi nhiều hành động; không cắt cảnh trong một shot.
 - Thiết kế khung hình 16:9. Ghi chuyển động môi trường nhẹ trong trường Cảnh.
 - Trường Nhạc chỉ là hướng dẫn phủ piano hậu kỳ, không yêu cầu mô hình video tạo nhạc.
 
@@ -63,11 +64,11 @@ Phân bổ đúng N shot theo 4 đoạn dưới đây; tỷ lệ là định hư
 
 ## Output
 - Ghi ra `kich_ban.md` và present cho người dùng.
-- Nhắc: "Xem lại, sửa STYLE ANCHOR / thêm bớt shot tuỳ ý; xong đưa file này cho unr3-scene."
+- Nhắc: "Xem lại, sửa STYLE ANCHOR / thêm bớt shot tuỳ ý; xong đưa file này cho unr3-scene (một ảnh/clip) hoặc unr3-storyboard (nhiều ô shot/clip)."
 
 ## Tự kiểm trước khi giao
 - [ ] Có STYLE ANCHOR đủ 5 dòng.
-- [ ] Đúng N shot, mốc thời gian cộng dồn chuẩn 8s.
+- [ ] Đúng số shot đã thống nhất, không có mốc thời gian hoặc thời lượng từng shot.
 - [ ] Mỗi shot chỉ một nhịp/một cú máy.
-- [ ] Có đủ 4 đoạn cảm xúc, có kết ấm.
+- [ ] Có mạch mở/dạo/lắng/kết phù hợp số shot, có kết ấm.
 - [ ] Không có yếu tố giật gân.
