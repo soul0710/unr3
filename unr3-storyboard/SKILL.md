@@ -1,6 +1,6 @@
 ---
 name: unr3-storyboard
-description: Chuyển mỗi shot tổng trong kịch bản thành một ảnh storyboard chứa nhiều shot nhỏ có chú thích và một prompt video điện ảnh 8 giây. Tổng thời lượng các shot nhỏ trong mỗi ảnh đúng 8 giây; xuất hai file prompt tiếng Anh, mỗi prompt một dòng.
+description: Chuyển mỗi shot tổng trong kịch bản thành một ảnh storyboard chứa nhiều shot nhỏ có chú thích và một prompt video điện ảnh 8 giây với camera chậm, êm, phù hợp video relaxing. Tổng thời lượng các shot nhỏ trong mỗi ảnh đúng 8 giây; xuất hai file prompt tiếng Anh, mỗi prompt một dòng.
 ---
 
 # unr3-storyboard — Kịch bản → Storyboard + video điện ảnh
@@ -11,7 +11,7 @@ description: Chuyển mỗi shot tổng trong kịch bản thành một ảnh st
 - Nhận kịch bản tiếng Việt hoặc ngôn ngữ khác, có hoặc không có STYLE ANCHOR, SHOT hay timestamp. Không bắt người dùng chuyển sang mẫu của unr3-writing.
 - Trích bối cảnh, nhân vật, phục trang, đạo cụ, diễn biến và phong cách. Nếu thiếu chỉ dẫn mỹ thuật, đề xuất nhất quán theo nội dung, ghi giả định ngắn ngoài hai file; chỉ hỏi khi thiếu thông tin cốt truyện quan trọng hoặc có mâu thuẫn ảnh hưởng kết quả.
 - Phân biệt SHOT TỔNG (shot nguồn trong kịch bản) và SHOT NHỎ (ô hình bên trong ảnh storyboard). Mỗi shot tổng tạo đúng một ảnh storyboard và một clip dài 8 giây. Tuyệt đối không gom nhiều shot tổng thành một ảnh.
-- Chia nội dung của từng shot tổng thành 2–4 shot nhỏ mặc định, hoặc theo số ô người dùng yêu cầu. Các shot nhỏ là các góc máy/cỡ cảnh/chi tiết bổ trợ của cùng shot tổng, không phải các shot tổng kế tiếp trong kịch bản. Giữ ít ô để nhịp phim không quá nhanh.
+- Chia nội dung của từng shot tổng thành 2–3 shot nhỏ mặc định; chỉ dùng 4 khi nội dung thật sự cần và mỗi shot nhỏ vẫn có ít nhất 2 giây. Các shot nhỏ là các góc máy/cỡ cảnh/chi tiết bổ trợ của cùng shot tổng, không phải các shot tổng kế tiếp trong kịch bản. Nếu người dùng yêu cầu hơn 4 panel trong 8 giây, giải thích rằng nhịp cắt sẽ không còn relaxing và hỏi họ chọn giảm panel hay chấp nhận nhịp nhanh hơn.
 - Nhận các mục SHOT trong kịch bản là shot tổng. Với văn xuôi chưa chia shot, xác định các đơn vị cảnh/khoảnh khắc làm shot tổng trước, rồi mới chia shot nhỏ trong từng đơn vị; nêu cách chia ngoài hai file. Dùng nhiều cỡ cảnh của cùng khoảnh khắc để có nhiều ô mà không thêm diễn biến mới. Nếu nội dung không đủ để chia hợp lý, hỏi làm rõ thay vì tự gộp shot tổng hoặc xuất storyboard một ô.
 - Giữ ánh xạ một-một và thứ tự: SHOT tổng k → ảnh storyboard k → clip k. Không bỏ, lặp, gộp hay tách một shot tổng thành nhiều ảnh. Nếu shot nguồn quá dài/phức tạp để thể hiện trong 8 giây hoặc có thời lượng tường minh mâu thuẫn, hỏi cách rút gọn trước khi tạo prompt.
 - Với N shot tổng, xuất N ảnh storyboard và N clip, tổng bộ video là N × 8 giây. Tổng thời lượng các shot nhỏ TRONG TỪNG ẢNH đúng 8 giây; không phải mỗi shot nhỏ 8 giây. Ví dụ 6 shot tổng → 6 dòng ảnh + 6 dòng video → 48 giây, dù mỗi ảnh có 2, 3 hay 4 ô.
@@ -30,9 +30,9 @@ description: Chuyển mỗi shot tổng trong kịch bản thành một ảnh st
 ## Prompt video theo các ô
 - Nói rõ dùng ảnh storyboard làm tham chiếu cho chuỗi shot toàn màn hình, không quay toàn tấm storyboard, không split-screen và không tạo chuyển động bay trên các ô.
 - Mỗi ô có đúng một đoạn timeline tương ứng theo thứ tự đọc, ví dụ `Subshot 1 / Panel 1 [0.00–3.00s]: ...; Subshot 2 / Panel 2 [3.00–8.00s]: ...`. Timeline đặt lại từ 0 ở mỗi dòng.
-- Mỗi đoạn nêu lại chủ thể, bối cảnh, cỡ cảnh/ống kính khớp ô ảnh, một chuyển động máy quay có chủ đích và chuyển động chủ thể/môi trường vừa đủ. Không chỉ viết “animate panel 1”.
+- Mỗi đoạn nêu lại chủ thể, bối cảnh, cỡ cảnh/ống kính khớp ô ảnh, đúng một chuyển động máy quay chậm có chủ đích và chuyển động chủ thể/môi trường vừa đủ. Không chỉ viết “animate panel 1”.
 - Các khoảng thời gian phải liên tiếp, không chồng lấn, không có khoảng trống, bắt đầu 0.00s và kết thúc 8.00s; tổng đúng 8 giây. Chia không đều theo cảm xúc khi có lợi, ví dụ hai shot 3+5 giây hoặc ba shot 3+2+3 giây.
-- Cho phép cắt giữa các shot đúng tại mốc đã chỉ định. Mặc định dùng clean cut hoặc match cut có động cơ; không morph giữa các ô, không thêm transition chiếm thời gian ngoài timeline. Không thêm cảnh hay nhân vật không có trong storyboard.
+- Cắt giữa các shot đúng tại mốc đã chỉ định, tại điểm chuyển động đã giảm tốc hoặc tạm nghỉ. Dùng clean cut/match cut nhẹ có động cơ; không whip transition, không morph giữa các ô, không thêm transition chiếm thời gian ngoài timeline. Không thêm cảnh hay nhân vật không có trong storyboard.
 - Yêu cầu full-frame 16:9, `8s total`, `minimal ambient sound`, `no music or voiceover`, `no visible captions, panel labels, borders or storyboard grid`. Chú thích của ảnh không xuất hiện trong video.
 
 ## Chất điện ảnh
@@ -50,7 +50,15 @@ Create a photorealistic cinematic storyboard with two panels arranged left to ri
 
 Video (một dòng, chỉ nội dung dòng được ghi vào file):
 
-Use the supplied two-panel storyboard as visual reference for sequential full-screen cinematic shots in reading order, a quiet Hanoi old-quarter cafe on an autumn morning, the same woman in a beige knit sweater and the same white coffee cup, warm amber-brown grading, soft window light from the left, restrained contrast and fine 35mm film grain throughout; Subshot 1 / Panel 1 [0.00–3.00s]: medium shot with a 35mm lens, slow push-in toward the woman seated at the wooden table with the steaming cup in front of her, subtle breathing and drifting steam, old street softly visible through the window; clean cut at 3.00s, preserving screen direction; Subshot 2 / Panel 2 [3.00–8.00s]: close-up with an 85mm lens, gentle lateral slide past her right hand resting beside the same cup, beige cuff visible and steam curling through the same side light; nostalgic quiet pacing, full-frame 16:9, 8s total, minimal ambient sound, no music or voiceover, no visible captions, panel labels, borders or storyboard grid, no morphing or extra shots.
+Use the supplied two-panel storyboard as visual reference for sequential full-screen cinematic shots in reading order, a quiet Hanoi old-quarter cafe on an autumn morning, the same woman in a beige knit sweater and the same white coffee cup, warm amber-brown grading, soft window light from the left, restrained contrast and fine 35mm film grain throughout; Subshot 1 / Panel 1 [0.00–3.00s]: medium shot with a 35mm lens, very slow push-in toward the woman seated at the wooden table with the steaming cup in front of her, subtle breathing and drifting steam, old street softly visible through the window, camera gently easing to a near stop before the cut; soft match cut at 3.00s, preserving screen direction and visual rhythm; Subshot 2 / Panel 2 [3.00–8.00s]: close-up with an 85mm lens, very slow lateral slide in the same screen direction past her right hand resting beside the same cup, beige cuff visible and steam curling through the same side light, camera easing out at the end to hand off calmly to the next parent shot; nostalgic quiet pacing, full-frame 16:9, 8s total, minimal ambient sound, no music or voiceover, no visible captions, panel labels, borders or storyboard grid, no morphing, whip pan, fast zoom, handheld shake or extra shots.
+
+## Nhịp camera relaxing giữa các shot
+- Trong mỗi shot nhỏ, dùng đúng một chuyển động rất chậm và ổn định: locked-off với drift nhẹ, very slow push-in/pull-out, gentle pan/tilt, slow lateral slide hoặc subtle parallax. Chuyển động có ease-in/ease-out, không đổi tốc độ đột ngột.
+- Giữa hai shot nhỏ liền kề, shot trước giảm tốc hoặc gần dừng trước điểm cắt; shot sau bắt đầu êm và ưu tiên tiếp tục cùng hướng chuyển động màn hình. Nếu đổi hướng hoặc đổi tiêu cự, dùng ánh nhìn, đạo cụ, hình khối hoặc chuyển động môi trường làm match point để cú cắt không gây giật.
+- Giữa hai shot tổng liền kề, shot nhỏ cuối của clip k phải để lại một “camera handoff” cụ thể cho shot nhỏ đầu của clip k+1: cùng hướng pan/slide, cùng điểm nhìn, cùng motif, hoặc trạng thái tĩnh tương ứng. Prompt của cả hai dòng phải mô tả handoff này bằng chi tiết cụ thể, không chỉ ghi “smooth transition”.
+- Giữ trục 180 độ, hướng nhìn, hướng di chuyển và vị trí đạo cụ qua mọi cú cắt. Không nhảy từ toàn cảnh sang cực cận, đổi bên trục hoặc đổi hướng máy đột ngột nếu không có shot trung gian/match point hợp lý.
+- Cấm whip pan, crash zoom, snap zoom, fast orbit, handheld shake, dutch-angle swing, speed ramp, camera roll và chuyển động bay nhanh. Không dùng nhiều chuyển động máy trong cùng một shot nhỏ.
+- Với video relaxing, ưu tiên 2–3 shot nhỏ trong 8 giây; mỗi shot đủ lâu để cảm nhận chuyển động và không cắt dồn. Camera phục vụ cảm xúc yên tĩnh, không phô diễn kỹ thuật.
 
 ## Mạch truyện và liên kết giữa các shot
 - Toàn bộ kịch bản phải kể một câu chuyện có mở đầu, diễn tiến và kết thúc hợp lý. Mỗi shot đóng góp vào cùng hành trình/chủ đề cụ thể; cùng màu sắc hoặc cùng mood chưa đủ để tạo liên kết.
@@ -73,5 +81,6 @@ Use the supplied two-panel storyboard as visual reference for sequential full-sc
 - Đếm số dòng thực tế: hai file bằng nhau, đúng N shot tổng, không dòng trống hoặc prompt bị ngắt dòng.
 - Kiểm tra mỗi dòng chỉ triển khai một shot tổng nguồn, không gom các shot tổng. Với từng cặp dòng, số ô shot nhỏ bằng số đoạn timeline; nhãn, thứ tự, chủ thể, đạo cụ, bố cục và tiêu cự tương ứng khớp nhau. Đối chiếu toàn bộ kịch bản nguồn, kể cả shot người dùng đã sửa.
 - Tính các khoảng thời gian: độ dài dương, điểm cuối đoạn trước bằng điểm đầu đoạn sau, tổng 8 giây và đoạn cuối kết thúc 8.00s ở mọi dòng.
+- Kiểm tra camera từng shot nhỏ chỉ có một chuyển động chậm, có ease-in/ease-out; mọi ranh giới shot nhỏ và shot tổng đều có camera handoff cụ thể, không đổi hướng/cỡ cảnh gây giật và không có chuyển động bị cấm.
 - Mọi ô có chú thích trong ảnh; video loại bỏ chú thích/lưới, có 16:9, 8s total và minimal ambient sound. Chuyển shot có chủ đích, giữ tính liên tục và cảm xúc.
 - Giao hai file và báo số storyboard/clip, tổng thời lượng. Đây là prompt mô tả ý đồ; không tuyên bố đã tạo hoặc kiểm chứng chất lượng video khi chưa chạy mô hình.
