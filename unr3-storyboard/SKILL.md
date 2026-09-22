@@ -77,7 +77,20 @@ Use the supplied two-panel storyboard as visual reference for sequential full-sc
 - Ví dụ chỉ dẫn phải có trong dòng ảnh: `large bold black sans-serif text on opaque white caption strips, generous padding, crisp readable lettering, exact captions, no tiny or overlapping text`.
 - Tự kiểm prompt có đủ chỉ dẫn đọc chữ và chú thích ngắn cho mọi ô. Nếu người dùng đưa ảnh storyboard đã tạo để kiểm tra, đọc thực tế từng nhãn/chú thích; chữ sai hoặc khó đọc cần sửa/rerender hoặc chèn chữ bằng công cụ dàn trang khi được yêu cầu. Không tuyên bố chữ đã đọc rõ chỉ dựa trên prompt. Video vẫn không hiển thị chữ, nhãn hoặc lưới storyboard.
 
+## Chọn ngôn ngữ điện ảnh cho từng ô
+- Xác định mỗi ô giúp người xem hiểu điều gì trong shot tổng trước khi chọn kỹ thuật. Góc rộng làm rõ không gian, trung cảnh làm rõ hành động, chi tiết làm rõ vật/biểu cảm nối chuyện; không bắt buộc clip nào cũng đi qua đủ ba cỡ cảnh.
+- Với từng ô, chọn góc nhìn, một nguyên tắc bố cục và vùng nét rõ ràng. Chừa khoảng trống theo ánh nhìn/hướng di chuyển; đường dẫn mắt và tiền cảnh phải dẫn về điểm chú ý, không che đạo cụ hoặc tay đang thực hiện hành động.
+- Mô tả vị trí, hướng và độ mềm của nguồn sáng; kiểm tra bóng đổ với thời tiết/thời điểm. Khi đổi góc máy, nguồn sáng vẫn ở cùng vị trí trong không gian, không mặc định luôn nằm bên trái màn hình ở mọi ô.
+- Chọn vùng nét theo thông tin cần thấy. Không yêu cầu vừa xóa phông mạnh vừa nét toàn bộ không gian; khi đổi tiêu cự giữa các ô, mô tả lại bố cục/phối cảnh và giữ ảnh/video của chính ô đó khớp nhau.
+- Mỗi shot nhỏ chỉ có một hành động chính ngắn thuộc diễn biến đã có, ngoài chuyển động môi trường nhẹ. Các ô có thể quan sát cùng hành động từ các góc bổ trợ; không khởi động lại hành động ở mỗi ô. Quy tắc một chuyển động máy áp dụng cho từng shot nhỏ, không biến cả clip storyboard thành một cú máy duy nhất.
+- Phân biệt dolly/slide là dịch chuyển máy, pan/tilt là xoay hướng máy, zoom là đổi tiêu cự. Chọn đúng một thao tác rất chậm, tốc độ cố định; nêu hướng và quãng nhỏ trong không gian đã xác lập. Không tự thêm zoom, rack focus, orbit hay tốc độ biến thiên để nối các ô.
+- Chất liệu, màu và vùng nét phải giúp làm rõ điểm chú ý; tránh nhồi tên thiết bị, nhãn chất lượng hoặc nhiều từ cùng nghĩa. Giữ đủ thông tin nhận diện, timeline, liên kết và chú thích dù prompt dài hơn.
+- Chỉ dẫn loại trừ lỗi phải đúng đối tượng: ảnh storyboard vẫn cần chữ, viền và lưới theo bố cục đã chọn; video mới loại bỏ chúng. Không dùng negative prompt chung như no text/no grid cho ảnh storyboard, hoặc no blur khi cần nền mờ. Mọi chỉ dẫn vẫn nằm trong dòng prompt tương ứng, không thêm file thứ ba.
+
+Nguồn tham khảo ý tưởng: [Cinematic Video Prompt Skill của Rylaispirit](https://github.com/Rylaispirit/cinematic-video-prompt-skill). Các hướng dẫn trên được viết cho UNR3; giữ một ảnh cho mỗi shot tổng, timeline 8 giây, chú thích rõ và camera không easing.
+
 ## Tự kiểm trước khi giao
+- Kiểm tra từng ô có điểm chú ý, góc nhìn, bố cục và vùng nét nhất quán với video; nguồn sáng giữ vị trí trong không gian qua cú cắt; không có yêu cầu kỹ thuật mâu thuẫn hoặc chỉ dẫn xóa chữ của ảnh storyboard.
 - Đếm số dòng thực tế: hai file bằng nhau, đúng N shot tổng, không dòng trống hoặc prompt bị ngắt dòng.
 - Kiểm tra mỗi dòng chỉ triển khai một shot tổng nguồn, không gom các shot tổng. Với từng cặp dòng, số ô shot nhỏ bằng số đoạn timeline; nhãn, thứ tự, chủ thể, đạo cụ, bố cục và tiêu cự tương ứng khớp nhau. Đối chiếu toàn bộ kịch bản nguồn, kể cả shot người dùng đã sửa.
 - Tính các khoảng thời gian: độ dài dương, điểm cuối đoạn trước bằng điểm đầu đoạn sau, tổng 8 giây và đoạn cuối kết thúc 8.00s ở mọi dòng.

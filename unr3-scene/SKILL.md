@@ -68,7 +68,21 @@ Ví dụ (1 dòng):
 - Nếu kịch bản nguồn bị đứt mạch, nêu đúng cặp shot và hỏi phần nối cần thiết trước khi xuất; không tự thêm sự kiện, đổi thứ tự hoặc bỏ shot để che lỗi. Có thể bổ sung chi tiết dàn cảnh không đổi nội dung để làm rõ liên kết có sẵn.
 - Tự kiểm từng cặp dòng k/k+1: cuối clip k nối hợp lý với ảnh đầu clip k+1 về hành động, không gian, đạo cụ và cảm xúc. Giữ mỗi clip một cú máy 8 giây và khớp ảnh/video theo dòng.
 
+## Chọn ngôn ngữ điện ảnh
+- Trước khi viết, xác định điểm người xem cần chú ý và cảm xúc của shot. Chọn cỡ cảnh, góc nhìn, bố cục và ánh sáng phục vụ điểm đó; không tự thêm sự kiện để minh họa một kỹ thuật.
+- Ảnh cần nêu cỡ cảnh + góc máy + bố cục + vùng nét. Video kế thừa đúng các lựa chọn đó, thêm một hành động chính nhỏ và một chuyển động camera rất chậm ở tốc độ cố định. Không đưa lệnh chuyển động camera vào mô tả khung ảnh tĩnh.
+- Chọn một nguyên tắc bố cục chính: đường dẫn mắt tới chủ thể, khoảng trống theo hướng nhìn, hoặc khung cửa bao quanh chủ thể. Chỉ thêm lớp tiền cảnh khi không che hành động/đạo cụ quan trọng; giữ bố cục đọc được trong suốt đường đi camera.
+- Mô tả nguồn sáng nằm ở đâu, chiếu theo hướng nào và mềm hay gắt. Giữ nguồn sáng, thời tiết, thời điểm và bóng đổ hợp lý; một hiện tượng hiếm như mưa dưới nắng cần có nguồn sáng được giải thích, không coi mọi tổ hợp là bất khả thi.
+- Chọn vùng nét theo nội dung: cần thấy tuyến đường/bối cảnh thì giữ đủ chiều sâu nét; cần nhấn chi tiết thì tách nền vừa phải nhưng vẫn rõ đạo cụ nối chuyện. Không ghép shallow depth of field với yêu cầu mọi khoảng cách đều sắc nét; giữ tiêu cự theo STYLE ANCHOR.
+- Phân biệt dolly/slide là dịch chuyển vị trí máy, pan/tilt là xoay hướng máy, zoom là đổi tiêu cự. Với quy tắc giữ ống kính hiện tại, ưu tiên dolly/slide/pan/tilt; không ghép zoom và dolly hoặc tự thêm rack focus. Nêu hướng, đối tượng hướng tới và quãng di chuyển nhỏ; không hứa lộ phần không gian chưa được ảnh/kịch bản xác lập.
+- Chỉ thêm chi tiết chất liệu nếu giúp đọc cảnh: sợi vải ở tay áo, vân gỗ trên bàn, giọt nước trên kính. Giữ màu, chất liệu và dấu hiệu nhận diện cố định giữa các clip; không đổi phong cách ảnh thật/hoạt hình chỉ vì thêm từ khóa.
+- Mỗi lựa chọn kỹ thuật phải có tác dụng nhìn thấy được. Bỏ từ đồng nghĩa lặp, tên thiết bị và nhãn chất lượng chung chung; không giới hạn độ dài bằng cách xóa thông tin nhận diện hoặc cầu nối giữa shot.
+- Nếu cần loại trừ lỗi, chọn đúng lỗi liên quan đến cảnh, diễn đạt trong cùng dòng prompt; không tạo file negative prompt thứ ba. Không cấm blur toàn cục khi cảnh cần nền mờ hoặc chuyển động môi trường tự nhiên.
+
+Nguồn tham khảo ý tưởng: [Cinematic Video Prompt Skill của Rylaispirit](https://github.com/Rylaispirit/cinematic-video-prompt-skill). Các hướng dẫn trên được viết cho quy trình UNR3; định dạng hai file, clip 8 giây và camera không easing vẫn là yêu cầu bắt buộc.
+
 ## Tự kiểm trước khi giao
+- [ ] Góc máy/bố cục/vùng nét khớp giữa ảnh và video; ánh sáng có nguồn hợp lý, không có yêu cầu kỹ thuật mâu thuẫn; chỉ một hành động chính nhỏ trong clip.
 - [ ] Số dòng 2 file bằng nhau và bằng N shot.
 - [ ] Không đánh số, không dòng trống, mỗi dòng tự đứng độc lập.
 - [ ] Mỗi dòng có `16:9`; video có `8s` + `minimal ambient sound` + nhịp chậm.
