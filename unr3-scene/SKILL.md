@@ -69,6 +69,7 @@ Ví dụ (1 dòng):
 - Tự kiểm từng cặp dòng k/k+1: cuối clip k nối hợp lý với ảnh đầu clip k+1 về hành động, không gian, đạo cụ và cảm xúc. Giữ mỗi clip một cú máy 8 giây và khớp ảnh/video theo dòng.
 
 ## Chọn ngôn ngữ điện ảnh
+- Trước khi tạo bộ prompt, đọc [tham chiếu điện ảnh relaxing](references/cinematic-relaxing.md): chọn theo sáu nhóm góc máy/chuyển động, ánh sáng, bố cục, ống kính/chất phim, phong cách/màu/cảm xúc, chất liệu/thời tiết/tư thế. Chỉ áp dụng lựa chọn phù hợp kịch bản; không liệt kê toàn bộ từ khóa.
 - Trước khi viết, xác định điểm người xem cần chú ý và cảm xúc của shot. Chọn cỡ cảnh, góc nhìn, bố cục và ánh sáng phục vụ điểm đó; không tự thêm sự kiện để minh họa một kỹ thuật.
 - Ảnh cần nêu cỡ cảnh + góc máy + bố cục + vùng nét. Video kế thừa đúng các lựa chọn đó, thêm một hành động chính nhỏ và một chuyển động camera rất chậm ở tốc độ cố định. Không đưa lệnh chuyển động camera vào mô tả khung ảnh tĩnh.
 - Chọn một nguyên tắc bố cục chính: đường dẫn mắt tới chủ thể, khoảng trống theo hướng nhìn, hoặc khung cửa bao quanh chủ thể. Chỉ thêm lớp tiền cảnh khi không che hành động/đạo cụ quan trọng; giữ bố cục đọc được trong suốt đường đi camera.
@@ -82,6 +83,7 @@ Ví dụ (1 dòng):
 Nguồn tham khảo ý tưởng: [Cinematic Video Prompt Skill của Rylaispirit](https://github.com/Rylaispirit/cinematic-video-prompt-skill). Các hướng dẫn trên được viết cho quy trình UNR3; định dạng hai file, clip 8 giây và camera không easing vẫn là yêu cầu bắt buộc.
 
 ## Tự kiểm trước khi giao
+- [ ] Chất phim và phong cách nhất quán; màu vật thể không đổi vô cớ; chất liệu/độ ướt/hướng gió hợp lý; tư thế đầu–cuối, tay cầm đạo cụ và ánh nhìn nối đúng giữa các clip.
 - [ ] Góc máy/bố cục/vùng nét khớp giữa ảnh và video; ánh sáng có nguồn hợp lý, không có yêu cầu kỹ thuật mâu thuẫn; chỉ một hành động chính nhỏ trong clip.
 - [ ] Số dòng 2 file bằng nhau và bằng N shot.
 - [ ] Không đánh số, không dòng trống, mỗi dòng tự đứng độc lập.

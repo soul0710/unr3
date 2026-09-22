@@ -78,6 +78,7 @@ Use the supplied two-panel storyboard as visual reference for sequential full-sc
 - Tự kiểm prompt có đủ chỉ dẫn đọc chữ và chú thích ngắn cho mọi ô. Nếu người dùng đưa ảnh storyboard đã tạo để kiểm tra, đọc thực tế từng nhãn/chú thích; chữ sai hoặc khó đọc cần sửa/rerender hoặc chèn chữ bằng công cụ dàn trang khi được yêu cầu. Không tuyên bố chữ đã đọc rõ chỉ dựa trên prompt. Video vẫn không hiển thị chữ, nhãn hoặc lưới storyboard.
 
 ## Chọn ngôn ngữ điện ảnh cho từng ô
+- Trước khi tạo bộ prompt, đọc [tham chiếu điện ảnh relaxing](references/cinematic-relaxing.md): chọn theo sáu nhóm góc máy/chuyển động, ánh sáng, bố cục, ống kính/chất phim, phong cách/màu/cảm xúc, chất liệu/thời tiết/tư thế. Áp dụng cho từng ô và kiểm tra liên tục cả trong ảnh lẫn giữa các ảnh; không biến bảng thuật ngữ thành danh sách bắt buộc.
 - Xác định mỗi ô giúp người xem hiểu điều gì trong shot tổng trước khi chọn kỹ thuật. Góc rộng làm rõ không gian, trung cảnh làm rõ hành động, chi tiết làm rõ vật/biểu cảm nối chuyện; không bắt buộc clip nào cũng đi qua đủ ba cỡ cảnh.
 - Với từng ô, chọn góc nhìn, một nguyên tắc bố cục và vùng nét rõ ràng. Chừa khoảng trống theo ánh nhìn/hướng di chuyển; đường dẫn mắt và tiền cảnh phải dẫn về điểm chú ý, không che đạo cụ hoặc tay đang thực hiện hành động.
 - Mô tả vị trí, hướng và độ mềm của nguồn sáng; kiểm tra bóng đổ với thời tiết/thời điểm. Khi đổi góc máy, nguồn sáng vẫn ở cùng vị trí trong không gian, không mặc định luôn nằm bên trái màn hình ở mọi ô.
@@ -90,6 +91,7 @@ Use the supplied two-panel storyboard as visual reference for sequential full-sc
 Nguồn tham khảo ý tưởng: [Cinematic Video Prompt Skill của Rylaispirit](https://github.com/Rylaispirit/cinematic-video-prompt-skill). Các hướng dẫn trên được viết cho UNR3; giữ một ảnh cho mỗi shot tổng, timeline 8 giây, chú thích rõ và camera không easing.
 
 ## Tự kiểm trước khi giao
+- Kiểm tra chất phim/phong cách/bảng màu giữa các ô; vật liệu, độ ướt và gió không tự đổi; tư thế và tay cầm đạo cụ nối đúng, không khởi động lại hành động sau cú cắt. Hiệu ứng phim chỉ áp dụng trong panel, chữ chú thích vẫn rõ.
 - Kiểm tra từng ô có điểm chú ý, góc nhìn, bố cục và vùng nét nhất quán với video; nguồn sáng giữ vị trí trong không gian qua cú cắt; không có yêu cầu kỹ thuật mâu thuẫn hoặc chỉ dẫn xóa chữ của ảnh storyboard.
 - Đếm số dòng thực tế: hai file bằng nhau, đúng N shot tổng, không dòng trống hoặc prompt bị ngắt dòng.
 - Kiểm tra mỗi dòng chỉ triển khai một shot tổng nguồn, không gom các shot tổng. Với từng cặp dòng, số ô shot nhỏ bằng số đoạn timeline; nhãn, thứ tự, chủ thể, đạo cụ, bố cục và tiêu cự tương ứng khớp nhau. Đối chiếu toàn bộ kịch bản nguồn, kể cả shot người dùng đã sửa.
