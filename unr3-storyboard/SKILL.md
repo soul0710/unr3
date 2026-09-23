@@ -90,7 +90,15 @@ Use the supplied two-panel storyboard as visual reference for sequential full-sc
 
 Nguồn tham khảo ý tưởng: [Cinematic Video Prompt Skill của Rylaispirit](https://github.com/Rylaispirit/cinematic-video-prompt-skill). Các hướng dẫn trên được viết cho UNR3; giữ một ảnh cho mỗi shot tổng, timeline 8 giây, chú thích rõ và camera không easing.
 
+## Kiểm tra vật lý qua từng ô và cú cắt
+- Với mỗi ảnh, xác lập sơ đồ chung của shot tổng: số người/vật, tỷ lệ và khoảng cách, vị trí tiền/trung/hậu cảnh, bề mặt đỡ và nguồn sáng. Từng ô cho một góc nhìn khác của cùng không gian; vật bị che hoặc ra ngoài khung vẫn tồn tại, không tự mọc thêm, mất, biến hình hay đổi kích thước.
+- Mỗi ô là trạng thái đầu của shot nhỏ tương ứng. Theo dõi trạng thái cuối → đầu ô sau: tay nào cầm đạo cụ, chân chạm mặt đất, hướng nhìn/di chuyển, mức ướt, tư thế và vị trí vật. Một hành động nhỏ có nguyên nhân và vừa trong đoạn timeline; không cho hành động khởi động lại sau cú cắt.
+- Phân biệt che khuất với biến mất: bàn trước người có thể che chân, cận cảnh tay có thể không thấy mặt, nhưng không yêu cầu hiện rõ bộ phận nằm sau vật chắn. Giữ tỷ lệ theo khoảng cách và phối cảnh khi đổi cỡ cảnh/tiêu cự.
+- Với từng shot nhỏ, mô tả điểm đầu, hướng và điểm cuối của camera trong không gian trống, không xuyên vật thể. Pan/tilt xoay từ vị trí đứng yên; cú cắt đổi góc không phải đường bay xuyên tường. Camera chậm đều, không easing; đường đi không làm lộ vật/không gian chưa được ô ảnh hoặc kịch bản xác lập.
+- Chỉ cho chuyển động môi trường có nguyên nhân và hợp chất liệu/trọng lực; hạn chế các vùng cùng chuyển động. Giữ vị trí nguồn sáng trong thế giới qua mọi ô, để bóng đổ và phản chiếu đổi theo góc nhìn chứ không tự đảo nguồn. Rà cả ranh giới ô cuối clip k → ô đầu clip k+1; sửa dàn cảnh trước khi thêm câu cấm chung, không dùng điểm số hoặc số vật/người cố định.
+
 ## Tự kiểm trước khi giao
+- Kiểm tra từng ô, từng đoạn timeline và mọi cú cắt: số vật/chi thể, tỷ lệ, tiếp xúc, che khuất, nguyên nhân chuyển động, đường camera trống và bóng đổ hợp lý; vật không tự xuất hiện/biến mất/đổi dạng.
 - Kiểm tra chất phim/phong cách/bảng màu giữa các ô; vật liệu, độ ướt và gió không tự đổi; tư thế và tay cầm đạo cụ nối đúng, không khởi động lại hành động sau cú cắt. Hiệu ứng phim chỉ áp dụng trong panel, chữ chú thích vẫn rõ.
 - Kiểm tra từng ô có điểm chú ý, góc nhìn, bố cục và vùng nét nhất quán với video; nguồn sáng giữ vị trí trong không gian qua cú cắt; không có yêu cầu kỹ thuật mâu thuẫn hoặc chỉ dẫn xóa chữ của ảnh storyboard.
 - Đếm số dòng thực tế: hai file bằng nhau, đúng N shot tổng, không dòng trống hoặc prompt bị ngắt dòng.

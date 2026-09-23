@@ -74,7 +74,15 @@ Phân bổ đúng N shot theo 4 đoạn dưới đây; tỷ lệ là định hư
 - Trước khi viết các shot, xác định sợi dây câu chuyện và trạng thái mở/kết. Trong mỗi mục SHOT, thêm trường `Liên kết: ...` nêu điều tiếp nối từ shot trước và chi tiết dẫn sang shot sau nếu có; shot đầu thiết lập, shot cuối khép lại điều đã mở.
 - Tự kiểm cả chuỗi và từng cặp shot liền kề: có thể giải thích vì sao shot sau xuất hiện ngay sau shot trước bằng diễn biến cụ thể. Sửa các khoảng nhảy logic trước khi giao, giữ đúng số shot đã thống nhất và không thêm timestamp.
 
+## Kiểm tra tính hợp lý của cảnh
+- Trước khi viết, hình dung sơ đồ cảnh nhất quán: số người và đạo cụ chính, kích thước tương đối, vị trí tiền/trung/hậu cảnh, vật che khuất vật nào, bề mặt đỡ và nguồn sáng. Đưa chi tiết cần thiết vào `Cảnh`, `Máy quay` hoặc `Liên kết`, không thêm bảng kê hay trường bắt buộc mới.
+- Mỗi SHOT có trạng thái đầu → một hành động chính vừa sức cơ thể → trạng thái cuối. Xác định tay đang cầm vật, chân tiếp xúc mặt đất và nguyên nhân của thay đổi; nhân vật/đạo cụ không tự nhân đôi, đổi kích thước, xuyên nhau hoặc đổi vị trí giữa hai SHOT.
+- Chuyển động môi trường phải có nguyên nhân và hợp chất liệu: gió tác động lá/vải mạnh hơn vật nặng; nước theo địa hình, hơi nước bay lên; vật tĩnh chỉ chuyển khi bị tác động. Với nhịp relax, chọn ít vùng chuyển động có ý nghĩa để cảnh vẫn ổn định.
+- Gợi ý một đường camera có điểm đầu, hướng và điểm cuối nằm trong không gian trống đã thiết lập; không cho máy đi xuyên người, bàn, tường hoặc kính. Giữ nguồn sáng, bóng đổ, thời điểm và thời tiết tương thích qua các SHOT.
+- Rà mâu thuẫn về số lượng, tỷ lệ, tiếp xúc, che khuất, thời gian và nhân quả trước khi giao. Nếu sửa được bằng dàn cảnh mà không đổi câu chuyện, sửa trực tiếp; nếu kịch bản nguồn cố ý phi thực tế hoặc thiếu quyết định cốt truyện, nêu đúng chỗ cần làm rõ. Không dùng điểm số hay ngưỡng số vật/người cố định.
+
 ## Tự kiểm trước khi giao
+- [ ] Trạng thái đầu/cuối, tỷ lệ và số lượng vật, bề mặt đỡ, hướng sáng và đường camera hợp lý; không có vật mọc thêm, biến mất hoặc xuyên nhau vô cớ.
 - [ ] Có STYLE ANCHOR đủ 5 dòng.
 - [ ] Đúng số shot đã thống nhất, không có mốc thời gian hoặc thời lượng từng shot.
 - [ ] Mỗi shot chỉ một nhịp/một cú máy.

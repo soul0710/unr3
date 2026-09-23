@@ -82,7 +82,15 @@ Ví dụ (1 dòng):
 
 Nguồn tham khảo ý tưởng: [Cinematic Video Prompt Skill của Rylaispirit](https://github.com/Rylaispirit/cinematic-video-prompt-skill). Các hướng dẫn trên được viết cho quy trình UNR3; định dạng hai file, clip 8 giây và camera không easing vẫn là yêu cầu bắt buộc.
 
+## Kiểm tra vật lý trước khi xuất prompt
+- Lập trạng thái khung đầu từ kịch bản: số nhân vật và đạo cụ quan trọng, kích thước tương đối theo khoảng cách, vị trí tiền/trung/hậu cảnh, vật che khuất và bề mặt đỡ. Prompt ảnh nêu rõ trạng thái này; video kế thừa đúng số lượng, hình dạng và vị trí ban đầu, không sinh thêm chi thể hoặc vật thể.
+- Kiểm tra tư thế và tương tác: tay nào cầm/chạm vật, chân tựa vào đâu, hành động chính nào vừa sức và hoàn thành được trong 8 giây. Vật chỉ đổi vị trí khi có tác động nhìn thấy được; không lơ lửng, xuyên người/bàn hoặc dịch chuyển tức thời. Nếu vật rời khung do camera/chủ thể di chuyển, mô tả lối rời hợp lý thay vì coi là biến mất.
+- Chọn một chuyển động môi trường phụ vừa đủ và nêu nguyên nhân: gió làm lá/vải chuyển động theo độ nặng, nước chảy theo địa hình, hơi nước bay lên; đồ nội thất và kiến trúc giữ ổn định. Không bắt mọi lớp cảnh cùng chuyển động.
+- Xác định camera ở đâu lúc đầu, đi theo hướng nào và kết thúc ở đâu trên một lối trống, không đi xuyên tường, kính, cây, bàn hoặc nhân vật. Với pan/tilt, thân máy đứng tại chỗ; chuyển động rất chậm và tốc độ cố định. Không lộ địa điểm/vật mới không được ảnh hoặc kịch bản xác lập.
+- Nêu nguồn sáng trong không gian và kiểm bóng đổ, phản chiếu, thời điểm, thời tiết ở cả ảnh/video. Rà xung đột như khung tĩnh nhưng lệnh orbit, rèm bất động dưới gió mạnh, trời đêm với nắng trưa hoặc xóa phông mạnh mà mọi lớp đều nét. Sửa mô tả cụ thể trước khi dùng câu ràng buộc chung; không thêm negative prompt riêng hoặc điểm số giả định.
+
 ## Tự kiểm trước khi giao
+- [ ] Ảnh đầu và 8 giây video giữ đúng số người/vật, tỷ lệ, giải phẫu, tiếp xúc và che khuất; mọi chuyển động có nguyên nhân, camera có đường trống, ánh sáng/bóng đổ không mâu thuẫn.
 - [ ] Chất phim và phong cách nhất quán; màu vật thể không đổi vô cớ; chất liệu/độ ướt/hướng gió hợp lý; tư thế đầu–cuối, tay cầm đạo cụ và ánh nhìn nối đúng giữa các clip.
 - [ ] Góc máy/bố cục/vùng nét khớp giữa ảnh và video; ánh sáng có nguồn hợp lý, không có yêu cầu kỹ thuật mâu thuẫn; chỉ một hành động chính nhỏ trong clip.
 - [ ] Số dòng 2 file bằng nhau và bằng N shot.
