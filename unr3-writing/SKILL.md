@@ -88,3 +88,10 @@ Phân bổ đúng N shot theo 4 đoạn dưới đây; tỷ lệ là định hư
 - [ ] Mỗi shot chỉ một nhịp/một cú máy.
 - [ ] Có mạch mở/dạo/lắng/kết phù hợp số shot, có kết ấm.
 - [ ] Không có yếu tố giật gân.
+
+## Agent review độc lập trước khi giao
+
+- Sau khi lưu sản phẩm và tự kiểm, giao đúng một agent khác với agent tạo nội dung đọc brief/kịch bản nguồn, STYLE ANCHOR và file đầu ra thực tế. Yêu cầu agent chỉ review, không sửa file, không tạo media, không thực hiện thao tác ngoài phạm vi; không cung cấp sẵn kết luận mong muốn.
+- Chờ agent trả kết quả. Agent phải nêu lỗi cụ thể kèm vị trí (SHOT, dòng hoặc panel), mức ảnh hưởng và cách sửa; nếu không thấy lỗi, phải nói đã kiểm những gì. Agent tạo nội dung đối chiếu từng nhận xét với nguồn, sửa lỗi được xác nhận, rồi chạy lại tự kiểm. Sau mọi lần sửa theo review, gửi lại toàn bộ đầu ra cuối cùng cùng nguồn cho chính agent ấy kiểm lại, đặc biệt các ranh giới SHOT/dòng/panel bị ảnh hưởng; chỉ giao khi vòng review cuối không còn lỗi cần sửa.
+- Chỉ báo “đã được agent review” khi có kết quả thực tế. Nếu môi trường không có khả năng gọi agent hoặc agent không hoàn thành, giữ sản phẩm ở trạng thái bản nháp, báo rõ bước review độc lập đang bị chặn và không bàn giao như sản phẩm hoàn tất; không coi phần tự kiểm của mình là review của agent. Không đưa nhật ký review vào các file đầu ra vốn có định dạng cố định.
+- Agent review kiểm mạch mở–diễn tiến–kết, số SHOT và STYLE ANCHOR, trạng thái nhân vật/đạo cụ qua từng SHOT, tính hợp lý không gian–vật lý và sự phù hợp với ý tưởng người dùng. Kiểm thêm nhịp relax, không timestamp và liên kết từng cặp SHOT.

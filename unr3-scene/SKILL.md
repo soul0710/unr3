@@ -99,3 +99,10 @@ Nguồn tham khảo ý tưởng: [Cinematic Video Prompt Skill của Rylaispirit
 - [ ] Video animate đúng khung ảnh cùng dòng, không đổi cảnh.
 - [ ] Camera dùng đúng một chuyển động rất chậm ở tốc độ cố định từ đầu đến cuối; không có `ease-in/ease-out`, tăng tốc hoặc giảm tốc; các clip liền kề có camera handoff cụ thể.
 - [ ] STYLE ANCHOR (màu/ống kính/chất phim) xuất hiện nhất quán ở mọi dòng.
+
+## Agent review độc lập trước khi giao
+
+- Sau khi lưu sản phẩm và tự kiểm, giao đúng một agent khác với agent tạo nội dung đọc brief/kịch bản nguồn, STYLE ANCHOR và file đầu ra thực tế. Yêu cầu agent chỉ review, không sửa file, không tạo media, không thực hiện thao tác ngoài phạm vi; không cung cấp sẵn kết luận mong muốn.
+- Chờ agent trả kết quả. Agent phải nêu lỗi cụ thể kèm vị trí (SHOT, dòng hoặc panel), mức ảnh hưởng và cách sửa; nếu không thấy lỗi, phải nói đã kiểm những gì. Agent tạo nội dung đối chiếu từng nhận xét với nguồn, sửa lỗi được xác nhận, rồi chạy lại tự kiểm. Sau mọi lần sửa theo review, gửi lại toàn bộ đầu ra cuối cùng cùng nguồn cho chính agent ấy kiểm lại, đặc biệt các ranh giới SHOT/dòng/panel bị ảnh hưởng; chỉ giao khi vòng review cuối không còn lỗi cần sửa.
+- Chỉ báo “đã được agent review” khi có kết quả thực tế. Nếu môi trường không có khả năng gọi agent hoặc agent không hoàn thành, giữ sản phẩm ở trạng thái bản nháp, báo rõ bước review độc lập đang bị chặn và không bàn giao như sản phẩm hoàn tất; không coi phần tự kiểm của mình là review của agent. Không đưa nhật ký review vào các file đầu ra vốn có định dạng cố định.
+- Agent review so kịch bản với từng cặp dòng ảnh/video: số dòng, khung đầu, nhận diện, vật thể, tỷ lệ, vật lý, nguồn sáng, đường camera, thời lượng và tính liên tục giữa clip. Kiểm đúng 8 giây, camera chậm đều và không easing.
