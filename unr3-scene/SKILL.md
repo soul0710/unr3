@@ -20,6 +20,11 @@ tĩnh) và `video_prompts.md` (animate đúng khung đó 8 giây bằng Veo 3.1)
   báo và hỏi phần thiếu, chờ trả lời; KHÔNG tự bịa. Kiểm tra STYLE ANCHOR đủ 5 trường, số shot liên tục. Chấp nhận kịch bản không có mốc thời gian; khi xuất video, mỗi SHOT trở thành một clip 8 giây. Nếu kịch bản có thời lượng tường minh khác 8 giây, hỏi cách xử lý thay vì âm thầm đổi. Nếu có lỗi hoặc yêu cầu mâu thuẫn, nêu rõ để người dùng sửa trước khi xuất prompt.
 
 ## Cách đọc kịch bản
+Trước khi lập prompt, đọc [quy trình ảnh → video từ 7 trạm](references/ai-film-workflow.md)
+(§1–3, §5–7): khóa nhận diện, phân vai ảnh tham chiếu, chốt khung đầu, xếp lớp thông tin và sửa một
+yếu tố mỗi lượt. Thiếu ảnh tham chiếu không chặn việc viết prompt; nêu nhu cầu chuẩn bị trong lời
+bàn giao, không bịa asset/ID. Giữ nguyên hai file, số dòng, 8 giây, Veo 3.1 và nhịp relax hiện có.
+
 1. Trích STYLE ANCHOR (mùa, màu, chất phim, ống kính, nhân vật/motif).
 2. Đếm số SHOT = N.
 3. Sinh đúng N dòng ở MỖI file. **Số dòng 2 file BẰNG NHAU tuyệt đối.**
@@ -44,6 +49,9 @@ Ví dụ (1 dòng):
 `Very slow constant-speed push-in, 35mm lens, on a young woman in a beige knit sweater holding a coffee cup at a quiet old-town street corner with wet cobblestone, her head turning slightly as autumn leaves drift and steam rises from the cup, soft morning light from the left holding steady, amber-brown palette with gentle 35mm film grain, nostalgic and calm, one continuous shot, camera speed remains unchanged from first to last frame, no easing, no acceleration or deceleration, minimal ambient sound, no music or voiceover, slow calm pacing, 8s, 16:9`
 
 ## Kỷ luật "frame → animate"
+- Ảnh mô tả trạng thái trước hành động; video mới phát triển hành động đó. Không vẽ sẵn kết quả rồi
+  yêu cầu diễn lại. Nhắc nhận diện/bối cảnh/STYLE ANCHOR đủ để tự đứng độc lập, nhưng không thiết kế
+  lại ảnh hoặc nhồi chi tiết mâu thuẫn. Khi có media, kiểm ảnh đầu trước khi animate; prompt chỉ là ý đồ.
 - Video prompt phải mô tả CÙNG khung ảnh, chỉ thêm chuyển động. CẤM mô tả cảnh mới,
   cắt cảnh, hay nhân vật mới trong 8s.
 - Một cú cam rất chậm ở một tốc độ cố định từ đầu đến cuối + world motion nhẹ. Cấm `ease-in/ease-out`, acceleration/deceleration, speed ramp, whip pan, crash zoom, snap zoom, fast orbit, handheld shake và đổi hướng camera trong clip. Không nhồi nhiều hành động.

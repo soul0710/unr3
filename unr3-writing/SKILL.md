@@ -51,6 +51,27 @@ Quy tắc:
 - Trường Nhạc chỉ là hướng dẫn phủ piano hậu kỳ, không yêu cầu mô hình video tạo nhạc.
 
 ## Mạch cảm xúc (chill, chạm, không giật gân)
+
+### Chuẩn bị câu chuyện và nhân vật trước khi chia SHOT
+
+Bổ sung từ video người dùng cung cấp “Phim AI đẹp không nhờ prompt thần chú — 7 trạm của creator
+Trung Quốc” (4:47.85; đối chiếu chữ/phụ đề trên khung hình, không phải bản chép âm thanh):
+- Chốt một câu: ai đang làm gì/muốn gì, điều gì khiến hành trình thay đổi, hình cuối khác hình đầu
+  ra sao. Với relax, dùng mong muốn nhỏ hoặc khám phá không gian; không ép xung đột, hi sinh hay phản diện.
+  Ghi sợi dây này ngắn trong lời bàn giao, không thêm mục bắt buộc vào `kich_ban.md`.
+- Chuyển nhãn cảm xúc thành dấu hiệu nhìn thấy ở `Cảnh`: tư thế, ánh nhìn, một cử chỉ hoặc chi tiết
+  môi trường. Ví dụ “hoài niệm” có thể là nhìn chiếc ghế trống có sẵn trong nguồn; không tự thêm người
+  đã mất/backstory. Giữ `Cảm xúc` để nêu dụng ý, không dùng nó thay cho hình ảnh.
+- Khóa một cụm nhận diện cho nhân vật lặp lại trong STYLE ANCHOR (tuổi/ngoại hình được xác lập,
+  tóc, phục trang, màu/chất liệu); phân biệt với trạng thái thay đổi như tư thế, tay cầm vật, độ ướt.
+  Lặp đúng cụm ở các SHOT nhân vật xuất hiện. Không có nhân vật thì khóa motif và tuyến khám phá.
+- Bàn giao nhu cầu ảnh cận mặt/toàn thân cho nhân vật lặp lại; ảnh nhiều góc là hồ sơ thiết kế khi cần,
+  không tự động là đầu vào model. Video nêu ngoại lệ riêng Seedance 2.0: ảnh ghép nhiều góc có thể bị
+  hiểu thành nhiều người. Không áp ngoại lệ này cho mọi công cụ. Không bịa asset/ID hay tự tạo ảnh.
+- Trong `Cảnh`, nêu khung đầu vẽ được → một hành động nhỏ → trạng thái cuối. Đưa điều kiện ánh sáng
+  theo cảm xúc vào mô tả, giữ màu nhận diện; dùng `Nhạc` cho hậu kỳ và `Liên kết` cho cầu nối.
+  Kế hoạch SHOT phải có trước bước sinh ảnh, ảnh đầu cần được kiểm thực tế trước khi animate.
+
 Phân bổ đúng N shot theo 4 đoạn dưới đây; tỷ lệ là định hướng, không cộng các phần đã làm tròn độc lập. Với N < 4, gộp các nhịp cảm xúc trong mạch kể, vẫn giữ mỗi shot một khoảnh khắc:
 1. Mở đầu gợi mở — thiết lập không gian, mời gọi (~10–15%).
 2. Dạo bước — chuỗi cảnh quan sát, chi tiết đời thường đẹp (~55–65%).

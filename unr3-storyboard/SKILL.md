@@ -8,6 +8,12 @@ description: Chuyển mỗi shot tổng trong kịch bản thành một ảnh st
 Đọc kịch bản người dùng đưa, giữ nội dung và thứ tự kể chuyện. Tạo `image_prompts.md` và `video_prompts.md`. Mỗi cặp dòng tạo một ảnh storyboard tham chiếu và một clip Veo 3.1 dài đúng 8 giây, khung hình 16:9. Chỉ viết prompt, không tự gọi công cụ tạo ảnh/video.
 
 ## Input và phân cấp shot
+Trước khi phân ô, đọc [quy trình ảnh → video từ 7 trạm](references/ai-film-workflow.md)
+(§1–2, §4–7): khóa nhận diện/ảnh tham chiếu, bảng kế hoạch theo ô, trạng thái đầu → cuối và sửa một
+yếu tố mỗi lượt. Mỗi ô là khung đầu của shot nhỏ tương ứng. Quy tắc một chuyển động máy áp dụng cho
+từng shot nhỏ, không biến cả clip thành một cú máy. Thiếu asset không chặn viết prompt; nêu nhu cầu
+chuẩn bị ngoài hai file, không bịa ảnh/ID. Giữ số dòng, nhãn, 8 giây và nhịp relax hiện có.
+
 - Nhận kịch bản tiếng Việt hoặc ngôn ngữ khác, có hoặc không có STYLE ANCHOR, SHOT hay timestamp. Không bắt người dùng chuyển sang mẫu của unr3-writing.
 - Trích bối cảnh, nhân vật, phục trang, đạo cụ, diễn biến và phong cách. Nếu thiếu chỉ dẫn mỹ thuật, đề xuất nhất quán theo nội dung, ghi giả định ngắn ngoài hai file; chỉ hỏi khi thiếu thông tin cốt truyện quan trọng hoặc có mâu thuẫn ảnh hưởng kết quả.
 - Phân biệt SHOT TỔNG (shot nguồn trong kịch bản) và SHOT NHỎ (ô hình bên trong ảnh storyboard). Mỗi shot tổng tạo đúng một ảnh storyboard và một clip dài 8 giây. Tuyệt đối không gom nhiều shot tổng thành một ảnh.
