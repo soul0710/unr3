@@ -10,6 +10,11 @@ Trung Quốc”, dài 4:47.85, nhận ngày 30/10/2026. Đối chiếu chữ và
 không phải bản chép toàn bộ âm thanh. Mốc thời gian gần đúng. **[Video]** là điều quan sát được;
 **[UNR3]** là cách áp dụng vào bộ skill. Ví dụ bên dưới được viết lại cho nhịp relaxing.
 Các trích dẫn “hướng dẫn chính hãng” trong video chưa được kiểm chứng độc lập ở đây.
+Đối chiếu bổ sung: file `*_2-transcription-report.txt` chỉ liệt kê 82 mục bị đánh dấu trong 95 dòng
+phụ đề, không phải toàn bộ transcript. Dùng phần chữ đọc được để bổ sung khung cuối, cảnh ngắn và
+cú pháp theo model; không xem timestamp là chính xác tuyệt đối hay tự khôi phục các dòng bị thiếu.
+Chuẩn hóa lỗi nhận dạng rõ như Kling/Seedance, “trạm”, “giây”. Phần kiểm nguồn hãng giới hạn ở §5
+được ghi riêng; không có nghĩa mọi lời trong video đã được hãng xác nhận.
 
 | Trạm | Đoạn gần đúng | Áp dụng |
 |---|---|---|
@@ -88,6 +93,26 @@ Video tương ứng, cùng trạng thái và một cử chỉ:
 Prompt dở: “Beautiful cinematic woman, walk in, sit, pick up coffee, orbit and zoom.” Nó thiếu nhận diện,
 gộp nhiều hành động và nhiều đường máy. Sửa bằng một khoảnh khắc đã có trong nguồn, không thêm động tác.
 
+### Khung cuối tùy chọn: tương thích và có thể đi tới được
+
+**[Video, mục 58–59 của report]** Video nhắc `Add End Frame` của Kling và cảnh báo khung đầu/cuối
+khác quá dễ gây nhảy cảnh. Tên/vị trí nút là thông tin video kể, không bảo đảm giao diện hiện tại.
+**[UNR3]** Chỉ dùng khung cuối khi người dùng cung cấp/yêu cầu và chế độ đích thực sự hỗ trợ. Không tự
+tạo thêm file thứ ba, không coi ô cuối storyboard là asset end-frame đã được gắn vào công cụ.
+
+- So cả hai ảnh về mặt/tóc/trang phục, địa điểm/hình học, giờ/thời tiết/nguồn sáng, vật trong tay,
+  hướng nhìn, cỡ cảnh và đường camera. Trạng thái cuối phải đạt được từ đầu bằng hành động đã định
+  trong thời gian clip. “Giống nhau” là cùng cảnh/nhận diện, không phải bắt hai ảnh giống từng pixel.
+- Ví dụ hợp lý: cùng Mai áo xanh trong quán sáng ban ngày, đầu nhìn cốc → cuối nhìn cửa sổ, camera
+  chỉ dịch một quãng nhỏ. Ví dụ xung đột: cuối là người khác, áo khác, quán ban đêm; không ép model
+  biến hình để đạt ảnh cuối. Nêu điểm xung đột và cần sửa asset nào hoặc làm rõ chuyển cảnh có chủ đích.
+- Dòng video nêu trạng thái đầu → một động tác → đích cuối, giữ đúng một lựa chọn máy. Clip relax
+  không tự thêm cut hoặc đổi thời gian/địa điểm để dung hòa hai ảnh. Chuyển cảnh thật cần được xử lý
+  ở kế hoạch shot; bước prompt không tự đổi sự kiện, số SHOT hoặc cổng duyệt nguồn.
+- Không có ảnh cuối thì chỉ mô tả đích hành động; không bịa đường dẫn/ID hay khẳng định đã attach.
+  Nếu sửa ảnh đầu/cuối, rà lại prompt video cùng dòng và đầu clip kế tiếp. Với clip loop do người
+  dùng yêu cầu, đích trở lại trạng thái đầu là chủ đích riêng, không mặc định mọi clip phải loop.
+
 ## 4. Storyboard: tách kế hoạch thành các khung đầu, không tách câu chuyện
 
 Lập kế hoạch mỗi SHOT tổng trước khi viết hai dòng prompt. Dùng nội bộ bảng ngắn nếu cần:
@@ -110,6 +135,18 @@ dùng cần theo dõi thật, báo trạng thái từng ảnh/clip trong trao đ
 generated, reviewed, accepted; không ghi accepted khi chỉ mới viết prompt. Khung 16:9 đã được quy định;
 fps chỉ chốt ở công cụ xuất khi biết yêu cầu, không giả vờ rằng chữ “30fps/8K” điều khiển được render.
 
+### Cảnh ngắn: không nhầm khuyến nghị với giới hạn model
+
+**[Video, mục 34–35 của report]** Một hướng dẫn được video dẫn lại khuyên cảnh không quá 8 giây vì
+nửa sau cảnh dài thường kém đi, mỗi cảnh một động tác chính. Đây là lời khuyên về khả năng kiểm soát,
+không phải chứng minh mọi model chỉ tạo được 8 giây hoặc cảnh dài luôn hỏng.
+**[UNR3]** 8 giây hiện là hợp đồng đầu ra của bộ skill; storyboard chia thời gian bên trong 8 giây,
+không phải 8 giây cho mỗi ô. Nếu yêu cầu 16 giây liên tục, nêu mâu thuẫn để chọn giữ liên tục bằng
+workflow hỗ trợ thời lượng đó hay chấp nhận hai clip 8 giây có cầu nối; không âm thầm chia/gom hoặc
+rút ngắn. Nếu nguồn đã có hai SHOT tổng 8 giây thì giữ hai cặp dòng, tổng 16 giây. Thay thời lượng
+đã thống nhất phải cập nhật kế hoạch, timeline, ảnh/video khớp dòng và kiểm lại nguồn; không thay
+giới hạn kỹ thuật của model bằng con số rút ra từ video.
+
 ## 5. Công thức là lớp thông tin, không phải thần chú hoặc cú pháp chung
 
 **[Video]** Kling được minh họa bằng chủ thể + chuyển động + bối cảnh, thêm máy quay; Seedance thêm
@@ -118,6 +155,27 @@ fps chỉ chốt ở công cụ xuất khi biết yêu cầu, không giả vờ 
 masterpiece, 8K”. Không bê `[Push in]` của ví dụ Hailuo hoặc placeholder `@Image` sang Veo một cách máy móc.
 Không thêm yếu tố đã trái STYLE ANCHOR để điền đủ công thức. “Chất lượng” nên được cụ thể hóa bằng bố cục,
 độ rõ chi tiết cần thấy, ánh sáng và màu nhất quán; tên model không bảo đảm đầu ra đạt.
+
+### Tách timeline dựng khỏi cú pháp gửi model
+
+**[Video, mục 83–85 của report]** Seedance 2.0 được mô tả theo “cảnh 1, cảnh 2…” thay vì ép số giây;
+Kling 4.0 theo mốc giây. Ghi đây là lời hướng dẫn video kể, không tự biến thành lệnh cấm timestamp
+cho Seedance hay bảo đảm Kling hiểu mọi format. Giữ một kế hoạch nhịp/tổng thời lượng; diễn đạt theo
+model/mode thực tế là lớp khác. Chữ trong prompt không thay thế thông số duration của công cụ.
+
+| Đích thật sự được chọn | Cách diễn đạt minh họa, sau khi kiểm hướng dẫn đúng mode |
+|---|---|
+| Seedance 2.0 theo video | `Scene 1: medium shot, Mai seated beside the cup; Scene 2: closer view of the same pose.` Giữ lịch dựng riêng, đặt thời lượng qua control được hỗ trợ. |
+| Kling 4.0 theo video | Mô tả beat bằng mốc/độ dài shot nếu mode hỗ trợ, ví dụ `0–4s` rồi `4–8s`; không giả rằng text tự ép kết quả chính xác. |
+| Hailuo theo video | Lệnh máy trong ngoặc vuông chỉ dùng khi tài liệu mode xác nhận; không mang sang Veo. |
+| UNR3 hiện tại, Veo 3.1 | Giữ hai file độc lập theo dòng và clip 8 giây; storyboard vẫn cần timeline khớp panel, từ 0 đến 8 giây. Không xóa timestamp chỉ vì lời khuyên cho Seedance. |
+
+**[Đối chiếu hãng giới hạn, 30/10/2026]** Kling mô tả clip dài hơn và nhiều keyframe; Seedance mô tả
+đầu ra nhiều shot. Hai trang không xác lập quy tắc cú pháp độc quyền mà video nêu:
+[Kling guide](https://kling.ai/blog/kling-4-ai-video-model),
+[Seedance launch](https://seed.bytedance.com/en/blog/official-launch-of-seedance-2-0/).
+Khi đổi công cụ, kiểm mode/API và workflow đích trước. Không chỉ thay chữ “Veo” thành “Seedance/Kling”
+trong prompt rồi gọi là tương thích, không tự bỏ timeline/nhãn/định dạng file của hợp đồng hiện tại.
 
 ## 6. Một lựa chọn máy cho từng cú quay liên tục
 

@@ -13,6 +13,8 @@ Trước khi phân ô, đọc [quy trình ảnh → video từ 7 trạm](referen
 yếu tố mỗi lượt. Mỗi ô là khung đầu của shot nhỏ tương ứng. Quy tắc một chuyển động máy áp dụng cho
 từng shot nhỏ, không biến cả clip thành một cú máy. Thiếu asset không chặn viết prompt; nêu nhu cầu
 chuẩn bị ngoài hai file, không bịa ảnh/ID. Giữ số dòng, nhãn, 8 giây và nhịp relax hiện có.
+Nếu có yêu cầu khung cuối, đọc thêm mục khung cuối trong §3: ô cuối không tự động là ảnh end-frame
+đã gắn vào model; so tính tương thích và khả năng đi tới trạng thái cuối trước khi dùng.
 
 - Nhận kịch bản tiếng Việt hoặc ngôn ngữ khác, có hoặc không có STYLE ANCHOR, SHOT hay timestamp. Không bắt người dùng chuyển sang mẫu của unr3-writing.
 - Trích bối cảnh, nhân vật, phục trang, đạo cụ, diễn biến và phong cách. Nếu thiếu chỉ dẫn mỹ thuật, đề xuất nhất quán theo nội dung, ghi giả định ngắn ngoài hai file; chỉ hỏi khi thiếu thông tin cốt truyện quan trọng hoặc có mâu thuẫn ảnh hưởng kết quả.
